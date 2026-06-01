@@ -68,3 +68,4 @@ El backend utiliza un archivo `.env` para configurar el puerto, la conexión con
 - Gestión de instalaciones.
 - Módulo de ayuda.
 - Diseño responsive.
+

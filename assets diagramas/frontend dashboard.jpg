@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./frontend_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+  <style type="text/css" data-vite-dev-id="/Users/ampacalvo/generaluz-crm/frontend/src/index.css">* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #17202a;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.dashboard {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.session-box {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  color: #5f6b76;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-button {
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  background: white;
+  color: #4d5965;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 10px 14px;
+}
+
+.nav-button.active {
+  background: #17202a;
+  border-color: #17202a;
+  color: white;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  color: #2f7d5c;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dashboard-header h1 {
+  margin: 6px 0 8px;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.dashboard-header p {
+  margin: 0;
+  color: #5f6b76;
+  max-width: 560px;
+}
+
+.primary-button {
+  border: 0;
+  border-radius: 8px;
+  background: #17202a;
+  color: white;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  background: white;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(23, 32, 42, 0.06);
+}
+
+.stat-card h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #6b7680;
+  font-size: 14px;
+}
+
+.stat-card strong {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.help-panel {
+  max-width: 980px;
+}
+
+.quick-help {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-window {
+  background: #f7f9fb;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+  max-height: 420px;
+  overflow: auto;
+  padding: 18px;
+}
+
+.chat-message {
+  background: white;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  max-width: 76%;
+  padding: 14px 16px;
+}
+
+.chat-message span {
+  color: #2f7d5c;
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.chat-message p {
+  color: #4d5965;
+  margin: 0;
+}
+
+.chat-message.user {
+  background: #17202a;
+  border-color: #17202a;
+  justify-self: end;
+}
+
+.chat-message.user span,
+.chat-message.user p {
+  color: white;
+}
+
+.chat-form {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr auto;
+}
+
+.chat-form input {
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  color: #17202a;
+  font: inherit;
+  font-weight: 700;
+  padding: 13px 14px;
+}
+
+@media (max-width: 760px) {
+  .dashboard {
+    padding: 24px;
+  }
+
+  .app-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .session-box {
+    justify-content: space-between;
+  }
+
+  .dashboard-header {
+    display: block;
+  }
+
+  .primary-button {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.login-page {
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(47, 125, 92, 0.12), transparent 38%),
+    #f4f6f8;
+  display: flex;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.login-panel {
+  background: white;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(23, 32, 42, 0.1);
+  display: grid;
+  gap: 28px;
+  margin: 0 auto;
+  max-width: 460px;
+  padding: 32px;
+  width: 100%;
+}
+
+.login-panel h1 {
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 8px 0;
+}
+
+.login-panel p {
+  color: #5f6b76;
+  margin: 0;
+}
+
+.login-form {
+  display: grid;
+  gap: 16px;
+}
+
+.login-form label {
+  color: #4d5965;
+  display: grid;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.login-form input {
+  background: white;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  color: #17202a;
+  font: inherit;
+  padding: 12px;
+  width: 100%;
+}
+
+.login-form input:focus {
+  border-color: #2f7d5c;
+  outline: 3px solid rgba(47, 125, 92, 0.14);
+}
+
+.login-mode-button {
+  text-align: center;
+  width: 100%;
+}
+
+.panel {
+  margin-top: 28px;
+  padding: 24px;
+  background: white;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(23, 32, 42, 0.06);
+}
+
+.panel-header {
+  margin-bottom: 18px;
+}
+
+.panel-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panel-header h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.panel-header p {
+  margin: 0;
+  color: #6b7680;
+  font-size: 14px;
+}
+
+.client-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.client-toolbar label {
+  display: grid;
+  gap: 8px;
+  color: #4d5965;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.client-toolbar input,
+.client-toolbar select {
+  width: 100%;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  background: white;
+  color: #17202a;
+  font: inherit;
+  padding: 11px 12px;
+}
+
+.client-toolbar input:focus,
+.client-toolbar select:focus {
+  border-color: #2f7d5c;
+  outline: 3px solid rgba(47, 125, 92, 0.14);
+}
+
+.compact-filter {
+  display: grid;
+  gap: 8px;
+  color: #4d5965;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 220px;
+}
+
+.compact-filter select {
+  width: 100%;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  background: white;
+  color: #17202a;
+  font: inherit;
+  padding: 11px 12px;
+}
+
+.table {
+  display: grid;
+  gap: 10px;
+}
+
+.table-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid #edf1f5;
+}
+
+.table-row > div:first-child {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.table-row strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.table-row span {
+  display: block;
+  color: #6b7680;
+  font-size: 14px;
+}
+
+.energy-chart {
+  margin-top: 18px;
+  max-width: 760px;
+}
+
+.detail-panel .energy-chart {
+  max-width: 100%;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-grid div {
+  border-top: 1px solid #edf1f5;
+  padding-top: 12px;
+}
+
+.detail-grid span {
+  display: block;
+  color: #6b7680;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.detail-grid strong {
+  color: #17202a;
+  font-size: 15px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.client-detail-address {
+  border-top: 1px solid #edf1f5;
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.client-detail-address span {
+  color: #6b7680;
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.client-detail-address strong {
+  color: #17202a;
+  font-size: 15px;
+}
+
+.client-detail-section {
+  border-top: 1px solid #edf1f5;
+  margin-top: 20px;
+  padding-top: 18px;
+}
+
+.pdf-header {
+  display: none;
+}
+
+.table-row .energy-chart {
+  margin: 10px 0 4px;
+  max-width: 520px;
+}
+
+.energy-chart svg {
+  display: block;
+  width: 100%;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+  color: #4d5965;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  margin-right: 6px;
+}
+
+.consumption-dot {
+  background: #3b73d9;
+}
+
+.production-dot {
+  background: #f59e0b;
+}
+
+.chart-grid {
+  stroke: #e8edf3;
+  stroke-width: 1;
+}
+
+.chart-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.chart-consumption {
+  stroke: #3b73d9;
+}
+
+.chart-production {
+  stroke: #f59e0b;
+}
+
+.chart-label {
+  fill: #6b7680;
+  font-size: 12px;
+}
+
+.status {
+  border-radius: 999px;
+  background: #eaf5ef;
+  color: #2f7d5c !important;
+  padding: 6px 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text-button,
+.danger-button,
+.text-link {
+  border: 0;
+  background: transparent;
+  color: #4d5965;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.text-button:hover,
+.text-link:hover {
+  color: #17202a;
+}
+
+.danger-button {
+  color: #b42318;
+}
+
+.danger-button:hover {
+  color: #7a1c13;
+}
+
+.installation-map {
+  background: #f8fafb;
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  order: 3;
+  overflow: hidden;
+  width: 100%;
+}
+
+.installation-map-header {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.installation-map-header strong,
+.installation-map-header span {
+  display: block;
+}
+
+.installation-map-header strong {
+  color: #17202a;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.installation-map-header span {
+  color: #6b7680;
+  font-size: 13px;
+}
+
+.installation-map iframe {
+  border: 0;
+  display: block;
+  height: 280px;
+  width: 100%;
+}
+
+.empty-message,
+.error-message {
+  margin: 0;
+  padding: 14px 0;
+  color: #6b7680;
+  font-size: 14px;
+}
+
+.error-message {
+  color: #b42318;
+}
+
+.client-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.form-field-wide {
+  grid-column: span 2;
+}
+
+.monthly-grid {
+  display: grid;
+  gap: 12px;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.client-form label {
+  display: grid;
+  gap: 8px;
+  color: #4d5965;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.client-form input,
+.client-form select {
+  width: 100%;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  background: white;
+  color: #17202a;
+  font: inherit;
+  padding: 11px 12px;
+}
+
+.client-form input:focus,
+.client-form select:focus {
+  border-color: #2f7d5c;
+  outline: 3px solid rgba(47, 125, 92, 0.14);
+}
+
+.quote-form {
+  display: grid;
+  gap: 18px;
+}
+
+.quote-section,
+.quote-chart-panel {
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.quote-section-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.quote-section-header > span {
+  align-items: center;
+  background: #eaf5ef;
+  border-radius: 999px;
+  color: #2f7d5c;
+  display: inline-flex;
+  flex: 0 0 28px;
+  font-size: 14px;
+  font-weight: 800;
+  height: 28px;
+  justify-content: center;
+  line-height: 1;
+}
+
+.quote-section-header h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.quote-section-header p {
+  color: #6b7680;
+  margin: 0;
+  font-size: 14px;
+}
+
+.quote-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.quote-fields label,
+.quote-monthly-grid label {
+  display: grid;
+  gap: 8px;
+  color: #4d5965;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.quote-fields input,
+.quote-fields select,
+.quote-monthly-grid input {
+  width: 100%;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  background: white;
+  color: #17202a;
+  font: inherit;
+  padding: 11px 12px;
+}
+
+.quote-fields input:focus,
+.quote-fields select:focus,
+.quote-monthly-grid input:focus {
+  border-color: #2f7d5c;
+  outline: 3px solid rgba(47, 125, 92, 0.14);
+}
+
+.monthly-consumption-card {
+  background: #f8fafb;
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.monthly-consumption-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.monthly-consumption-header h4 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.monthly-consumption-header p {
+  color: #6b7680;
+  font-size: 14px;
+  margin: 0;
+}
+
+.monthly-consumption-header strong {
+  background: white;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  color: #17202a;
+  flex: 0 0 auto;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+
+.quote-monthly-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.quote-monthly-grid label {
+  background: white;
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+  gap: 6px;
+  padding: 10px;
+}
+
+.quote-monthly-grid label span {
+  color: #6b7680;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quote-monthly-grid input {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.quote-monthly-grid input:focus {
+  outline: 0;
+}
+
+.quote-summary-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.quote-summary-grid div,
+.quote-total-card {
+  background: #f8fafb;
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.quote-summary-grid span,
+.quote-total-card span {
+  color: #6b7680;
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.quote-summary-grid strong,
+.quote-total-card strong {
+  color: #17202a;
+  display: block;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.quote-total-card {
+  align-self: stretch;
+  background: #17202a;
+  border-color: #17202a;
+}
+
+.quote-total-card span,
+.quote-total-card strong {
+  color: white;
+}
+
+.quote-final-section .form-actions {
+  margin-top: 18px;
+}
+
+.quote-chart-panel .energy-chart {
+  max-width: 100%;
+}
+
+.quote-list-toolbar {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  margin: 18px 0;
+}
+
+.quote-list-toolbar label {
+  color: #4d5965;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.quote-list-toolbar input,
+.quote-list-toolbar select {
+  background: white;
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  color: #17202a;
+  font: inherit;
+  padding: 11px 12px;
+  width: 100%;
+}
+
+.quote-list-toolbar input:focus,
+.quote-list-toolbar select:focus {
+  border-color: #2f7d5c;
+  outline: 3px solid rgba(47, 125, 92, 0.14);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  grid-column: 1 / -1;
+}
+
+.secondary-button {
+  border: 1px solid #d7dee6;
+  border-radius: 8px;
+  background: white;
+  color: #17202a;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondary-button:hover,
+.primary-button:hover {
+  opacity: 0.88;
+}
+
+@media (max-width: 760px) {
+  .client-form {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-fields,
+  .quote-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-header-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .client-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .row-actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .installation-map-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .installation-map {
+    width: 100%;
+  }
+
+  .form-field-wide {
+    grid-column: auto;
+  }
+
+  .monthly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .monthly-consumption-header {
+    display: grid;
+  }
+
+  .quote-monthly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quote-list-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-message {
+    max-width: 100%;
+  }
+
+  .chat-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    display: grid;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .app-nav,
+  .dashboard-header,
+  .client-form,
+  .detail-actions,
+  .panel:not(.detail-panel),
+  .text-button,
+  .danger-button {
+    display: none !important;
+  }
+
+  .dashboard {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .detail-panel {
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .detail-panel .panel-header {
+    display: none;
+  }
+
+  .pdf-header {
+    border-bottom: 2px solid #17202a;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  .pdf-header span {
+    color: #2f7d5c;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .pdf-header h2 {
+    font-size: 28px;
+    margin: 4px 0 0;
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .energy-chart {
+    break-inside: avoid;
+    max-width: 100%;
+  }
+}
+</style></head>
+  <body cz-shortcut-listen="true">
+    <div id="root"><main class="dashboard"><nav class="app-nav"><div class="nav-links"><button class="nav-button active">Dashboard</button><button class="nav-button">Clientes</button><button class="nav-button">Presupuestos</button><button class="nav-button">Instalaciones</button><button class="nav-button">Ayuda</button></div><div class="session-box"><span>Amparo Calvo</span><button class="text-button" type="button">Cerrar sesión</button></div></nav><header class="dashboard-header"><div><span class="eyebrow">CRM Comercial</span><h1>Generaluz</h1><p>Panel de control para clientes, instalaciones y presupuestos.</p></div><div class="detail-actions"><button class="secondary-button" type="button">Nuevo presupuesto</button><button class="primary-button" type="button">Nuevo cliente</button></div></header><section class="stats-grid"><article class="stat-card"><div><h2>Clientes</h2><p>Contactos registrados</p></div><strong>3</strong></article><article class="stat-card"><div><h2>Instalaciones</h2><p>Proyectos activos</p></div><strong>0</strong></article><article class="stat-card"><div><h2>Presupuestos</h2><p>Pendientes de seguimiento</p></div><strong>0</strong></article></section><section class="panel"><div class="panel-header"><h2>Resumen comercial</h2><p>Estado general de la actividad del CRM.</p></div><div class="detail-grid"><div><span>Presupuestos aceptados</span><strong>2</strong></div><div><span>Facturacion estimada</span><strong>20.000 EUR</strong></div><div><span>Presupuestos pendientes</span><strong>0</strong></div></div></section><section class="panel"><div class="panel-header panel-header-actions"><div><h2>Clientes recientes</h2><p>Ultimos contactos registrados en el sistema.</p></div><button class="secondary-button" type="button">Ver clientes</button></div><div class="table"><div class="table-row"><div><strong>Amparo Calvo</strong><span>600977389</span><span>acalvocliment@gmail.com</span></div><span class="status">Contactado</span></div><div class="table-row"><div><strong>Oscar Perez Lopez</strong><span>671079048</span><span>oscar.perez@gmail.com</span></div><span class="status">Nuevo</span></div><div class="table-row"><div><strong>Amparo Calvo Climent</strong><span>600977389</span><span>acalvocliment@gmail.com</span></div><span class="status">Contactado</span></div></div></section><section class="panel"><div class="panel-header panel-header-actions"><div><h2>Presupuestos recientes</h2><p>Ultimas propuestas comerciales creadas.</p></div><button class="secondary-button" type="button">Crear presupuesto</button></div><div class="table"><div class="table-row"><div><strong>Instalación residencial</strong><span>10.000 EUR</span></div><span class="status">Aceptado</span></div><div class="table-row"><div><strong>Instalación residencial</strong><span>10.000 EUR</span></div><span class="status">Aceptado</span></div></div></section></main></div>
+    <script type="module" src="./frontend_files/main.jsx"></script>
+  
+
+</body></html>
